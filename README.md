@@ -2,14 +2,16 @@
 
 RL-augmented CNN classifiers for 4-class Blood Cell Cancer (Acute Lymphoblastic Leukemia) classification on peripheral blood smear images.
 
-**Authors:** Nilesh Sarkar, Sreedevi Sreedhar, Ram Charan Athyam, K Sai Charan
+**Author:** Nilesh Sarkar
 **Date:** 30 November 2025
+
+---
 
 ## Overview
 
 Six pretrained CNN backbones are fine-tuned on the 4-class Blood Cell Cancer (ALL) dataset, then each is paired with a small REINFORCE-style **contextual bandit** that learns to pick one of three augmentation pipelines per image to improve robustness.
 
-**Backbones:** ResNet18, ResNet50, DenseNet121, EfficientNet-B0, MobileNetV2, ConvNeXt-Tiny
+**Backbones:** ResNet18 · ResNet50 · DenseNet121 · EfficientNet-B0 · MobileNetV2 · ConvNeXt-Tiny
 
 ## Dataset
 
@@ -31,7 +33,11 @@ The raw dataset is not committed. To reproduce, download via Kaggle CLI into `da
 - Supervised training (all 6 backbones): ~4.5 hours
 - RL policy training (all 6 backbones, 10 episodes each): ~5 minutes
 
-## Results (summary)
+---
+
+## Results
+
+### Summary table
 
 | Backbone        | Test acc | Best val acc | RL avg reward (last episode) |
 |-----------------|---------:|-------------:|-----------------------------:|
@@ -40,9 +46,73 @@ The raw dataset is not committed. To reproduce, download via Kaggle CLI into `da
 | DenseNet121     | ~0.99    | 0.999        | 0.48–0.58                    |
 | EfficientNet-B0 | ~0.99    | 0.999        | 0.37–0.53                    |
 | MobileNetV2     | ~0.99    | 0.999        | 0.34–0.46                    |
-| ConvNeXt-Tiny   | ~0.99    | 0.999        | 0.53–0.63                    |
+| ConvNeXt-Tiny   | ~0.99    | 0.999        | **0.53–0.63**                |
 
-ConvNeXt-Tiny and DenseNet121 produced the strongest RL reward trends in the short run.
+ConvNeXt-Tiny and DenseNet121 produced the strongest RL reward trends in this short run.
+
+---
+
+### ResNet18
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![ResNet18 accuracy](figures/resnet18_accuracy.png) | ![ResNet18 loss](figures/resnet18_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![ResNet18 CM](figures/resnet18_cm.png) | ![ResNet18 RL reward](figures/resnet18_rl_reward.png) |
+
+### ResNet50
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![ResNet50 accuracy](figures/resnet50_accuracy.png) | ![ResNet50 loss](figures/resnet50_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![ResNet50 CM](figures/resnet50_cm.png) | ![ResNet50 RL reward](figures/resnet50_rl_reward.png) |
+
+### DenseNet121
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![DenseNet121 accuracy](figures/densenet121_accuracy.png) | ![DenseNet121 loss](figures/densenet121_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![DenseNet121 CM](figures/densenet121_cm.png) | ![DenseNet121 RL reward](figures/densenet121_rl_reward.png) |
+
+### EfficientNet-B0
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![EfficientNet-B0 accuracy](figures/efficientnet_b0_accuracy.png) | ![EfficientNet-B0 loss](figures/efficientnet_b0_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![EfficientNet-B0 CM](figures/efficientnet_b0_cm.png) | ![EfficientNet-B0 RL reward](figures/efficientnet_b0_rl_reward.png) |
+
+### MobileNetV2
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![MobileNetV2 accuracy](figures/mobilenet_v2_accuracy.png) | ![MobileNetV2 loss](figures/mobilenet_v2_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![MobileNetV2 CM](figures/mobilenet_v2_cm.png) | ![MobileNetV2 RL reward](figures/mobilenet_v2_rl_reward.png) |
+
+### ConvNeXt-Tiny
+
+| Accuracy | Loss |
+|:---:|:---:|
+| ![ConvNeXt-Tiny accuracy](figures/convnext_tiny_accuracy.png) | ![ConvNeXt-Tiny loss](figures/convnext_tiny_loss.png) |
+
+| Confusion matrix | RL reward |
+|:---:|:---:|
+| ![ConvNeXt-Tiny CM](figures/convnext_tiny_cm.png) | ![ConvNeXt-Tiny RL reward](figures/convnext_tiny_rl_reward.png) |
+
+---
 
 ## Repository contents
 

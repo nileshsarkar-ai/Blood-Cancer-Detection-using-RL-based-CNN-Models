@@ -1,6 +1,6 @@
 # Blood Cell Cancer (ALL) — RL-augmented CNN Models
 
-Authors: Nilesh Sarkar, Sreedevi Sreedhar, Ram Charan Athyam, K Sai Charan
+Author: Nilesh Sarkar
 
 Date: 30 November 2025
 
