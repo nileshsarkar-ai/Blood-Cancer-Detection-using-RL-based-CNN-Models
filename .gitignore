@@ -1,0 +1,21 @@
+# Raw dataset (1.7 GB, downloadable from Kaggle)
+data/
+
+# Trained CNN weights (>100 MB GitHub limit on some files; ~300 MB total)
+checkpoints/
+
+# Unrelated RL warm-up
+CartpoleV1_Using_GPU.ipynb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
